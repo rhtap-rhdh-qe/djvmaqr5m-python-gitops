@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: djvmaqr5m-python-gitops
+  description: This is GitOps manifest for djvmaqr5m-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=djvmaqr5m-python
+    backstage.io/kubernetes-id: djvmaqr5m-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: djvmaqr5m-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:djvmaqr5m-python
